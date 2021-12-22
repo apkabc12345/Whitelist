@@ -1,0 +1,81 @@
+local plr = game.Players.LocalPlayer
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/apkabc12345/Whitelist/main/White%20listed'),true))()
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Key = Instance.new("TextBox")
+local Keyaccept = Instance.new("TextButton")
+local ImageLabel = Instance.new("ImageLabel")
+local checklist = Instance.new("TextButton")
+
+--Properties:
+	
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 0.350
+Frame.Position = UDim2.new(0.399380803, 0, 0.260122687, 0)
+Frame.Size = UDim2.new(0, 259, 0, 320)
+
+Key.Name = "Key"
+Key.Parent = Frame
+Key.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Key.BackgroundTransparency = 0.500
+Key.Position = UDim2.new(0.0989302173, 0, 0.437799245, 0)
+Key.Size = UDim2.new(0, 204, 0, 38)
+Key.Font = Enum.Font.SourceSans
+Key.Text = "enter key here"
+Key.TextColor3 = Color3.fromRGB(189, 189, 189)
+Key.TextSize = 24.000
+
+Keyaccept.Name = "Key accept"
+Keyaccept.Parent = Frame
+Keyaccept.BackgroundColor3 = Color3.fromRGB(96, 0, 144)
+Keyaccept.BackgroundTransparency = 0.250
+Keyaccept.Position = UDim2.new(0.106652223, 0, 0.618367374, 0)
+Keyaccept.Size = UDim2.new(0, 204, 0, 41)
+Keyaccept.Font = Enum.Font.SourceSans
+Keyaccept.Text = "Key Sumbit"
+Keyaccept.TextColor3 = Color3.fromRGB(0, 0, 0)
+Keyaccept.TextSize = 28.000
+Keyaccept.TextStrokeColor3 = Color3.fromRGB(255, 214, 47)
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.Position = UDim2.new(0.100386098, 0, 0.057692308, 0)
+ImageLabel.Size = UDim2.new(0, 204, 0, 106)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=7668156706"
+
+checklist.Name = "Check List"
+checklist.Parent = Frame
+checklist.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+checklist.Position = UDim2.new(0.106652223, 0, 0.796492338, 0)
+checklist.Size = UDim2.new(0, 204, 0, 41)
+checklist.Font = Enum.Font.SourceSans
+checklist.Text = "Check Whitelist"
+checklist.TextColor3 = Color3.fromRGB(255, 242, 53)
+checklist.TextSize = 28.000
+checklist.TextStrokeColor3 = Color3.fromRGB(255, 214, 47)
+
+Keyaccept.MouseButton1Down:Connect(function()
+	if Key.Text == KMC_key then
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/apkabc12345/Whitelist/main/Catarsphia%20script'),true))()
+	else
+		plr:Kick("Wrong Key")
+	end
+end)
+
+checklist.MouseButton1Down:Connect(function()
+	White(plr)
+	wait(3)
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/apkabc12345/Whitelist/main/Catarsphia%20script'),true))()
+	wait(1)
+	ScreenGui:Destroy()
+end)
