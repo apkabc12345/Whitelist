@@ -120,7 +120,7 @@ plr.CharacterAdded:Connect(function()
 				loop = true
 				while loop do
 					hum.CFrame = hum.CFrame + hum.CFrame.lookVector * 6.5
-					wait(0.35)
+					wait(0.5)
 				end
 			end
 		end)
