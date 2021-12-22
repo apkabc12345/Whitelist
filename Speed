@@ -1,0 +1,132 @@
+plr.CharacterAdded:Connect(function()
+
+	local ScreenGui = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local Hello = Instance.new("TextLabel")
+	local Item = Instance.new("TextButton")
+	local Resource = Instance.new("TextButton")
+	local Animal = Instance.new("TextButton")
+	local Ore = Instance.new("TextButton")
+	local Speed = Instance.new("TextButton")
+	local SpeedBind = Instance.new("TextBox")
+
+
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Frame.Parent = ScreenGui
+	Frame.BackgroundColor3 = Color3.fromRGB(20, 20, 255)
+	Frame.BackgroundTransparency = 0.500
+	Frame.Position = UDim2.new(0.0151400454, 0, 0.0310965627, 0)
+	Frame.Size = UDim2.new(0, 666, 0, 161)
+
+	Hello.Name = "Hello"
+	Hello.Parent = Frame
+	Hello.BackgroundColor3 = Color3.fromRGB(255, 44, 44)
+	Hello.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Hello.Position = UDim2.new(2.14414406, 0, 4.66459656, 0)
+	Hello.Size = UDim2.new(0, 197, 0, 38)
+	Hello.Font = Enum.Font.SourceSans
+	Hello.Text = "this Script made by KDS"
+	Hello.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Hello.TextSize = 24.000
+
+	Item.Name = "Item"
+	Item.Parent = Frame
+	Item.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	Item.BackgroundTransparency = 0.350
+	Item.Size = UDim2.new(0, 173, 0, 40)
+	Item.Visible = false
+	Item.Font = Enum.Font.SourceSans
+	Item.Text = "Item Esp : OFF"
+	Item.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Item.TextSize = 28.000
+
+	Resource.Name = "Resource"
+	Resource.Parent = Frame
+	Resource.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	Resource.BackgroundTransparency = 0.350
+	Resource.Position = UDim2.new(0.740240216, 0, 0, 0)
+	Resource.Size = UDim2.new(0, 173, 0, 40)
+	Resource.Visible = false
+	Resource.Font = Enum.Font.SourceSans
+	Resource.Text = "Resource Esp : OFF"
+	Resource.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Resource.TextSize = 28.000
+
+	Animal.Name = "Animal"
+	Animal.Parent = Frame
+	Animal.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	Animal.BackgroundTransparency = 0.350
+	Animal.Position = UDim2.new(0.740240216, 0, 0.75155282, 0)
+	Animal.Size = UDim2.new(0, 173, 0, 40)
+	Animal.Visible = false
+	Animal.Font = Enum.Font.SourceSans
+	Animal.Text = "Animal Esp : OFF"
+	Animal.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Animal.TextSize = 28.000
+
+	Ore.Name = "Ore"
+	Ore.Parent = Frame
+	Ore.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	Ore.BackgroundTransparency = 0.350
+	Ore.Position = UDim2.new(0, 0, 0.75155282, 0)
+	Ore.Size = UDim2.new(0, 173, 0, 40)
+	Ore.Visible = false
+	Ore.Font = Enum.Font.SourceSans
+	Ore.Text = "ORE Esp : OFF"
+	Ore.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Ore.TextSize = 28.000
+
+	Speed.Name = "Speed"
+	Speed.Parent = Frame
+	Speed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Speed.BackgroundTransparency = 0.250
+	Speed.Position = UDim2.new(0.34984985, 0, 0, 0)
+	Speed.Size = UDim2.new(0, 200, 0, 26)
+	Speed.Font = Enum.Font.SourceSans
+	Speed.Text = "Speed"
+	Speed.TextColor3 = Color3.fromRGB(255, 255, 0)
+	Speed.TextSize = 28.000
+	Speed.TextStrokeColor3 = Color3.fromRGB(255, 214, 47)
+
+	SpeedBind.Name = "SpeedBind"
+	SpeedBind.Parent = Frame
+	SpeedBind.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SpeedBind.BackgroundTransparency = 0.500
+	SpeedBind.Position = UDim2.new(0.34984985, 0, 0.204968944, 0)
+	SpeedBind.Size = UDim2.new(0, 200, 0, 26)
+	SpeedBind.Visible = false
+	SpeedBind.Font = Enum.Font.SourceSans
+	SpeedBind.Text = "Speed key bind"
+	SpeedBind.TextColor3 = Color3.fromRGB(0, 0, 0)
+	SpeedBind.TextSize = 14.000
+
+	--SpeedVariables
+	local plr = game:GetService("Players").LocalPlayer
+	local char = plr.Character
+	local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+	local hum = char:FindFirstChild("HumanoidRootPart")
+	--yeet
+	Speed.MouseButton1Down:connect(function()
+		local plr = game:GetService("Players").LocalPlayer
+		local char = plr.Character
+		local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+		local hum = char:FindFirstChild("HumanoidRootPart")
+		mouse.KeyDown:connect(function(key)
+			if key == "t" then
+				loop = true
+				while loop do
+					hum.CFrame = hum.CFrame + hum.CFrame.lookVector * 6.5
+					wait(0.35)
+				end
+			end
+		end)
+	end)
+
+	mouse.KeyUp:connect(function(key)
+		if key == "t" then
+			loop = false
+		end
+	end)
+end)
