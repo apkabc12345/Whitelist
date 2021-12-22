@@ -1,5 +1,5 @@
 local plr = game.Players.LocalPlayer
-local KMC = true
+KMC = true
 KMC_key = "scripts"
 
 function White(plr)
