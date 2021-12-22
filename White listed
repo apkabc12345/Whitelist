@@ -1,4 +1,8 @@
-WhiteList = {
-	"Dark_Krto",
-	"ghld_1009",
-}
+local plr = game.Players.LocalPlayer
+
+if plr.Name == "Dark_Krto" or plr.Name == "ghld_1009" or plr.Name == "EZ_EZF" then
+	print(plr.Name.. "WhiteListed")
+else
+	print("Blacklist")
+	plr:Kick("NotAllowed")
+end
