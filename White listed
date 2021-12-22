@@ -1,9 +1,9 @@
 local plr = game.Players.LocalPlayer
-KMC_key = "scripts"
+KMC_key = "scriptz"
 
 
 if plr.Name == "Dark_Krto" or plr.Name == "ghld_1009" or plr.Name == "EZ_EZF" then
-	print(plr.Name.. "WhiteListed")
+	print(plr.Name .. "WhiteListed")
 else
 	print("Blacklist")
 	plr:Kick("NotAllowed")
