@@ -3,7 +3,7 @@ KMC = "able"
 KMC_key = "scripts"
 
 function White(plr)
-	if plr.Name == "Dark_Krto" or plr.Name == "ghld_1009" or plr.Name == "EZ_EZF" then
+	if plr.Name == "Dark_Krto" or plr.Name == "ghld_1009" or plr.Name == "EZ_EZF" or plr.Name == "GammingBroNickMode" then
 	print(plr.Name.. "WhiteListed")
 else
 	print("Blacklist")
